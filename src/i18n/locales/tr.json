@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, Ben",
+    "role": "Full Stack Geliştirici",
+    "description": "Modern ve responsive web uygulamaları geliştiriyorum"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "description": "Web uygulamaları geliştirme konusunda deneyimli, tutkulu bir geliştiriciyim"
+  },
+  "projects": {
+    "title": "Projelerim",
+    "viewProject": "Projeyi Görüntüle",
+    "all": "Tüm Projeler"
+  },
+  "contact": {
+    "title": "İletişime Geç",
+    "name": "İsim",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "send": "Mesaj Gönder"
+  }
+}
