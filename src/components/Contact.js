@@ -91,7 +91,7 @@ const Contact = () => {
                 {t("contact.title")}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Feel free to reach out to me for any questions or opportunities!
+                {t("contact.reachOut")}
               </p>
 
               <div className="space-y-4">
@@ -115,7 +115,7 @@ const Contact = () => {
 
               <div className="mt-8">
                 <h4 className="text-lg font-semibold mb-4 text-text-light dark:text-text-dark">
-                  Follow Me
+                  {t("contact.follow")}
                 </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((link) => (

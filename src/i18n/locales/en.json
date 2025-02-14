@@ -17,13 +17,16 @@
   "projects": {
     "title": "My Projects",
     "viewProject": "View Project",
-    "all": "All Projects"
+    "all": "See All My Projects",
+    "repository": "View Repository"
   },
   "contact": {
     "title": "Contact Me",
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send Message"
+    "send": "Send Message",
+    "reachOut": "Feel free to reach out to me for any questions or opportunities!",
+    "follow": "Follow Me"
   }
 }

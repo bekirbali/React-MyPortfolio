@@ -147,7 +147,7 @@ const Portfolio = () => {
               to="/projects"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-light dark:bg-primary-dark hover:opacity-90 transition-opacity"
             >
-              See All My Projects
+              {t("projects.all")}
               <svg
                 className="ml-2 -mr-1 w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"

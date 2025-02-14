@@ -17,13 +17,16 @@
   "projects": {
     "title": "Projelerim",
     "viewProject": "Projeyi Görüntüle",
-    "all": "Tüm Projeler"
+    "all": "Tüm Projeleri Görüntüle",
+    "repository": "Depoyu Görüntüle"
   },
   "contact": {
     "title": "İletişime Geç",
     "name": "İsim",
     "email": "E-posta",
     "message": "Mesaj",
-    "send": "Mesaj Gönder"
+    "send": "Mesaj Gönder",
+    "reachOut": "Herhangi bir soru veya fırsat için benimle iletişime geçmekten çekinmeyin!",
+    "follow": "Beni takip edin"
   }
 }
