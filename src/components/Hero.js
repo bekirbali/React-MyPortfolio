@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import avatar from "../assets/myavatar.png";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -48,12 +49,15 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            <a
+            <Link
+              to="contact"
+              smooth={true}
+              duration={50}
               href="#contact"
               className="inline-block bg-primary-light dark:bg-primary-dark text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-all"
             >
               {t("nav.contact")}
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
