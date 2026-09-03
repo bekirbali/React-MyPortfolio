@@ -1,164 +1,36 @@
-# Personal Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A modern, responsive portfolio website built with React.js to showcase professional work, skills, and experience.
+## Getting Started
 
-## 📑 Product Requirements Document (PRD)
-
-### 1. Product Overview
-
-A professional portfolio website to showcase your work, skills, and experience to potential employers or clients.
-
-### 2. Core Features
-
-#### Must-Have Features
-
-- **Hero Section**
-
-  - Professional photo/avatar
-  - Brief introduction
-  - Call-to-action button
-
-- **About Section**
-
-  - Professional summary
-  - Skills and technologies
-  - Education/certifications
-
-- **Portfolio/Projects Section**
-
-  - Project thumbnails
-  - Project descriptions
-  - Live demo links
-  - GitHub repository links
-
-- **Contact Section**
-  - Contact form
-  - Social media links
-  - Professional email
-
-#### Nice-to-Have Features
-
-- Blog section
-- Testimonials
-- Resume download option
-- Dark/Light mode toggle
-
-### 3. Technical Requirements
-
-#### Frontend
-
-- React.js
-- Modern UI framework (e.g., Tailwind CSS)
-- Responsive design (mobile-first approach)
-- SEO optimization
-
-#### Performance
-
-- Fast loading times (<3s)
-- Optimized images
-- Smooth animations
-
-### 4. Design Requirements
-
-- Clean, minimalist design
-- Professional color scheme
-- Easy navigation
-- Consistent typography
-- Proper spacing and hierarchy
-
-### 5. Success Metrics
-
-- Website load time
-- Mobile responsiveness score
-- SEO score
-- Form submission success rate
-
-## 🌟 Features
-
-### Core Features
-
-- **Hero Section**: Professional introduction with a striking first impression
-- **About**: Detailed professional background and skills
-- **Portfolio**: Showcase of projects with live demos and source code
-- **Contact**: Easy-to-use contact form and professional links
-
-### Additional Features
-
-- Responsive Design
-- SEO Optimized
-- Fast Loading Times
-- Modern UI/UX
-- Dark/Light Mode Toggle
-
-## 🚀 Tech Stack
-
-- **Frontend**: React.js
-- **Styling**: Tailwind CSS
-- **Deployment**: [To be decided]
-- **Form Handling**: [To be implemented]
-
-## 📋 Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-## 🛠️ Installation
-
-1. Clone the repository
+First, run the development server:
 
 ```bash
-git clone [your-repo-link]
-```
-
-2. Install dependencies
-
-```bash
-npm install
+npm run dev
 # or
-yarn install
-```
-
-3. Start the development server
-
-```bash
-npm start
+yarn dev
 # or
-yarn start
+pnpm dev
+# or
+bun dev
 ```
 
-## 🎯 Project Structure
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```
-portfolio/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
-│   ├── styles/
-│   └── utils/
-├── public/
-└── package.json
-```
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## 📱 Responsive Design
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Mobile-first approach
-- Breakpoints:
-  - Mobile: 320px - 480px
-  - Tablet: 481px - 768px
-  - Desktop: 769px+
+## Learn More
 
-## 🔍 Performance Metrics
+To learn more about Next.js, take a look at the following resources:
 
-- Page load time: <3s
-- Mobile responsiveness
-- SEO optimization
-- Cross-browser compatibility
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🤝 Contributing
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-This is a personal portfolio project, but suggestions and feedback are welcome!
+## Deploy on Vercel
 
-## 📄 License
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This project is licensed under the MIT License.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

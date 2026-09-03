@@ -1,207 +1,79 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
-import emailjs from "@emailjs/browser";
+"use client";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Mail, MessageSquare, Send } from 'lucide-react';
 
-const Contact = () => {
-  const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    emailjs
-      .send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        formData,
-        process.env.REACT_APP_MAIL_KEY
-      )
-      .then((result) => {
-        console.log(result.text, "success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-          privacyPolicy: false,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/bekirbali",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            fillRule="evenodd"
-            d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/bekirbali/",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-        </svg>
-      ),
-    },
-  ];
-
+export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-20 bg-background-alt-light dark:bg-background-alt-dark transition-colors duration-200"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+    <section id="contact" className="py-24 relative">
+      <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
+        
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-12 text-text-light dark:text-text-dark">
-            {t("contact.title")}
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            Birlikte <span className="text-[var(--accent)]">Çalışalım</span>
           </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Yeni bir projen mi var? Veya ekibine yetenekli bir Full-Stack Developer mı arıyorsun? Bir mesaj uzağındayım.
+          </p>
+        </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-text-light dark:text-text-dark">
-                {t("contact.title")}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                {t("contact.reachOut")}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-panel p-8 md:p-12 rounded-3xl border-slate-700/50 relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent)]/10 rounded-full blur-[80px]" />
+          
+          <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
+            <div className="flex-1 space-y-6">
+              <h3 className="text-2xl font-bold text-white">İletişime Geç</h3>
+              <p className="text-slate-400">
+                Projelerin için doğru mimariyi kurmaktan, ürünü canlıya almaya kadar her adımda profesyonel destek verebilirim. Aşağıdaki formdan veya doğrudan sosyal hesaplarımdan bana ulaşabilirsin.
               </p>
-
-              <div className="space-y-4">
-                <p className="flex items-center text-gray-600 dark:text-gray-300">
-                  <svg
-                    className="w-6 h-6 mr-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  bfbali43@gmail.com
-                </p>
-              </div>
-
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold mb-4 text-text-light dark:text-text-dark">
-                  {t("contact.follow")}
-                </h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition-colors"
-                    >
-                      {link.icon}
-                    </a>
-                  ))}
-                </div>
+              
+              <div className="space-y-4 pt-4">
+                <a href="mailto:bfbali43@gmail.com" className="flex items-center gap-4 text-slate-300 hover:text-[var(--accent)] transition-colors group">
+                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors border border-slate-700">
+                    <Mail size={20} />
+                  </div>
+                  <span className="font-medium">bfbali43@gmail.com</span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/bekirbali/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-300 hover:text-[var(--accent)] transition-colors group">
+                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors border border-slate-700">
+                    <MessageSquare size={20} />
+                  </div>
+                  <span className="font-medium">LinkedIn'den Yaz</span>
+                </a>
               </div>
             </div>
-
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
+            
+            <div className="flex-1 w-full">
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-text-light dark:text-text-dark"
-                  >
-                    {t("contact.name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark shadow-sm focus:border-primary-light dark:focus:border-primary-dark focus:ring-primary-light dark:focus:ring-primary-dark"
-                  />
+                  <input type="text" placeholder="Adınız" className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--accent)] transition-colors" />
                 </div>
-
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-text-light dark:text-text-dark"
-                  >
-                    {t("contact.email")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark shadow-sm focus:border-primary-light dark:focus:border-primary-dark focus:ring-primary-light dark:focus:ring-primary-dark"
-                  />
+                  <input type="email" placeholder="E-posta Adresiniz" className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--accent)] transition-colors" />
                 </div>
-
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-text-light dark:text-text-dark"
-                  >
-                    {t("contact.message")}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark shadow-sm focus:border-primary-light dark:focus:border-primary-dark focus:ring-primary-light dark:focus:ring-primary-dark"
-                  />
+                  <textarea placeholder="Mesajınız" rows="4" className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"></textarea>
                 </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-all"
-                >
-                  {t("contact.send")}
+                <button type="submit" className="w-full bg-[var(--accent)] hover:bg-sky-400 text-slate-950 font-bold rounded-xl px-4 py-3 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent-glow)]">
+                  Gönder <Send size={18} />
                 </button>
               </form>
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
-};
-
-export default Contact;
+}

@@ -1,72 +1,73 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+"use client";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-const About = () => {
-  const { t } = useTranslation();
-
-  const skills = [
-    "React.js",
-    "JavaScript",
-    "TypeScript",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
-    "Git",
-    "Next.js",
-    "Django",
-  ];
-
+export default function About() {
   return (
-    <section
-      id="about"
-      className="py-20 bg-background-alt-light dark:bg-background-alt-dark transition-colors duration-200"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-bold text-center mb-8 text-text-light dark:text-text-dark">
-            {t("about.title")}
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-text-light dark:text-text-dark">
-                {t("about.title")}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {t("about.description")}
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+        
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex-1"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              Sadece Kod Yazmıyor, <span className="text-[var(--accent)]">Ürün Geliştiriyorum.</span>
+            </h2>
+            <div className="space-y-4 text-slate-400 text-lg">
+              <p>
+                Freelance geçmişim bana paha biçilemez bir yetenek kazandırdı: Bir işi sadece teknik olarak çözmek değil, müşterinin asıl problemine odaklanarak baştan sona bir dijital ürün ortaya çıkarmak.
+              </p>
+              <p>
+                Bir şirkette sadece bir "dişli" olmak yerine, projelerin her aşamasında (tasarım, mimari, veritabanı, frontend, deployment) sorumluluk aldım ve ürünleri başarıyla canlıya taşıdım.
+              </p>
+              <p>
+                Next.js ve Django ikilisi ile çalışıyorum çünkü bu bana hem mükemmel SEO ve performans sunan kullanıcı arayüzleri hem de her türlü entegrasyona (CMS, i18n, randevu) açık güçlü arka plan mimarileri kurma imkanı veriyor.
               </p>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-text-light dark:text-text-dark">
-                Skills & Technologies
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-background-light dark:bg-background-dark rounded-lg p-3 text-center hover:bg-hover-light dark:hover:bg-hover-dark transition-colors text-text-light dark:text-text-dark"
-                  >
-                    {skill}
-                  </motion.div>
-                ))}
-              </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex-1 w-full"
+          >
+            <div className="glass-panel p-8 rounded-3xl border-slate-700/50 relative shadow-2xl">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[var(--accent)]/20 rounded-full blur-[30px]" />
+              
+              <h3 className="text-xl font-bold text-white mb-6 border-b border-slate-700/50 pb-4">Yaklaşımım</h3>
+              
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 border border-slate-700 text-[var(--accent)] font-bold">1</div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-1">Müşteri Odaklılık</h4>
+                    <p className="text-sm text-slate-400">Önce problemi anlar, ardından o problemi çözecek en iyi mimariyi tasarlarım.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 border border-slate-700 text-[var(--accent)] font-bold">2</div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-1">Uçtan Uca Sorumluluk</h4>
+                    <p className="text-sm text-slate-400">Frontend, veritabanı tasarımı ve deployment dâhil tüm süreçleri baştan sona yönetirim.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 border border-slate-700 text-[var(--accent)] font-bold">3</div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-1">Ölçeklenebilirlik</h4>
+                    <p className="text-sm text-slate-400">Günü kurtaran kodlar değil, yarın rahatça büyüyecek modüler sistemler yazarım.</p>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
