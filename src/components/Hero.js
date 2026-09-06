@@ -49,7 +49,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight"
             >
-              Fikirleri <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-indigo-400">Canlıya</span> Taşıyorum
+              Hayalleri <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-indigo-400">Hayata</span> Taşıyorum
             </motion.h1>
 
             <motion.p 
