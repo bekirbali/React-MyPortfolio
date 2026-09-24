@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -53,9 +54,21 @@ export default function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="text-2xl font-bold tracking-tighter text-white"
+          className="flex items-center gap-2.5 text-2xl font-bold tracking-tighter text-white group"
         >
-          Bekir<span className="text-[var(--accent)]">.</span>
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src="/newlogo.png"
+              alt="Bekir Logo"
+              width={36}
+              height={36}
+              priority
+              className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.25)]"
+            />
+          </div>
+          <span>
+            Bekir<span className="text-[var(--accent)]">.</span>
+          </span>
         </a>
 
         {/* Desktop Nav */}

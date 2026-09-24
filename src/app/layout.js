@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Bekir | Full-Stack Developer",
   description: "Freelance Full-Stack Developer specializing in Next.js and Django. I build end-to-end digital solutions and premium web applications.",
+  icons: {
+    icon: [
+      { url: "/newlogo.png" },
+      { url: "/icon.png" },
+    ],
+    shortcut: "/newlogo.png",
+    apple: "/newlogo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
